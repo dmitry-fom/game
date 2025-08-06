@@ -25,7 +25,7 @@ export async function apiFetch(input: RequestInfo, init: RequestInit = {}) {
     return
   }
 
-  if (!response.ok) {
+  if (!response.ok && response.status !== 422) {
     throw new Error(`HTTP error! status: ${response.status}`)
   }
 
