@@ -23,7 +23,7 @@ class IAmLuckyGame
     {
         try {
             $number = random_int(self::NUMBER_FROM, self::NUMBER_TO);
-        } catch (Throwable) {
+        } catch (Throwable $e) {
             $this->logger->error('Random number generation failed: ' . $e->getMessage());
 
             return new ImLuckyResult(
